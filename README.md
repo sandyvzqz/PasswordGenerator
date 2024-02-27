@@ -4,5 +4,5 @@ The purpose of this project was to implement all material that we have learned i
 Formulating the random password was a difficult challenge, which required research on how to do it. I used the webpage below as a reference on how to do it. 
 [Random Password Generator using JavaScript](https://dev.to/code_mystery/random-password-generator-using-javascript-6a)
 
-[application link](file:///Users/sandyvazquez/Desktop/module-3-challenge/index.html)
+[application link](https://sandyvzqz.github.io/PasswordGenerator/)
 ![alt text](./images/passwordgenerator.html.png)
