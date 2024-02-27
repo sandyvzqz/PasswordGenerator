@@ -6,20 +6,35 @@ var lowerCaseArray=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o',
 var upperCaseArray=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var numberArray=['0','1','2','3','4','5','6','7','8','9','0'];
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword());
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+// Write password to the #password input
+function writePassword() {  
+  var correctPrompts = userPrompt();
+  var passwordText = document.querySelector("#password");
+  if(correctPrompts){
+    var newPassword = generatePassword();
+    // displays password on screen
+    passwordText.value = newPassword;
+  }else{
+    passwordText.value = "";
+  }  
+}
 
 //create a generatePassword function
 function generatePassword(){
   var password= "";
+  //This part of code was formulated with helpful information
+  //found on the dev.to webpage linked in the readme file 
   for (var i = 0; i < passLength; i++){
-    var randomIndex = Math.floor(Math.random()*userChoiceArray.length)
+    var randomIndex = Math.floor(Math.random()*userChoiceArray.length);
     password = password + userChoiceArray[randomIndex];
   } 
-  return "generated password";
+  return password;
 }
 
 //create function that prompts user for password criteria
@@ -47,14 +62,5 @@ function userPrompt(){
   return true;
 }
 
-// Write password to the #password input
-function writePassword() {  
-  var correctPrompts = userPrompt();
-  if(correctPrompts){
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-    // displays password on screen
-    passwordText.value = password;
-  }  
-}
+
 
